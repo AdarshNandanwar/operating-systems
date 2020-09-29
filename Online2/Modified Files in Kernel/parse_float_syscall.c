@@ -1,25 +1,26 @@
-#include<stdio.h>
-#include<string.h>
+#include<linux/kernel.h>
+#include<linux/types.h>
+#include<linux/syscalls.h>
+#include "parse_float_syscall.h"
 
+/*
+    Pre-condition:
+        num is a valid float number in string format
 
-void printBinary(long n){
-    for(int i = 31; i>=0; i--){
-        printf("%ld", ((n>>i)&1));
-    }
-    printf("\n");
-}
+    Post-condition:
+        return float num in long format
+*/
 
-long ieee754(char * numBuffer, int len){
+SYSCALL_DEFINE2(parse_float_syscall, char __user *, num, int, len){
     long res = 0, i = 0, j = 0, t, sign = 0, first = 0, firstBinaryLen = 0, second = 0, secondLen = 0, exponent = 0, mantissa = 0, mantissaBinaryLen = 0, capacity = 32, den = 1, zeroCountTillFirstOne = 0, firstOne = 0, tempSecond = 0;
-
-
-    if(len == 0) return res;
-
-    /*
-
     char numBuffer[256];
     unsigned long lengthLeft = len;
     unsigned long chunkSize = sizeof(numBuffer);
+
+
+
+
+
 
     while(lengthLeft > 0){
         if(lengthLeft < chunkSize){
@@ -31,7 +32,9 @@ long ieee754(char * numBuffer, int len){
         lengthLeft = lengthLeft - chunkSize;
     }
 
-    */
+
+    if(len == 0) return res;
+
 
     if(numBuffer[i] == '-') {
         // setting sign bit
@@ -112,13 +115,4 @@ long ieee754(char * numBuffer, int len){
 
     res = sign | exponent | mantissa ;
     return res;
-}
-
-int main(){
-    char * num;
-    scanf("%s", num);
-    long res = ieee754(num, strlen(num));
-    printf("Response: ");
-    printBinary(res);
-    return 0;
 }

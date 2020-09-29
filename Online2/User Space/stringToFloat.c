@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 #define parse_float_syscall(str, len) (syscall(441 , str, len))
 
 float getFloat(char * str, int len){
@@ -7,7 +8,7 @@ float getFloat(char * str, int len){
     // check if the string is valid
     int before = 0, after = 0, decimalCount = 0;
     for(int i = 0; i<len; i++){
-        if(str[i] == '-' or str[i] == '+'){
+        if(str[i] == '-' || str[i] == '+'){
             if(i != 0){
                 isValid = 0;
                 break;
@@ -42,7 +43,15 @@ float getFloat(char * str, int len){
 
 
 
-    float res = parse_float_syscall(str, len);
+    long res = parse_float_syscall(str, len);
+
+
+
+    for(int i = 31; i>=0; i--) printf("%ld", ((res>>i)&1));
+    printf("\n");
+
+
+
 
     if(res > 100000.0){
         return 100002.0;
