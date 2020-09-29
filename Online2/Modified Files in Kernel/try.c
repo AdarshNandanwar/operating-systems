@@ -78,7 +78,7 @@ long ieee754(char * numBuffer, int len){
     capacity = 32-1-8-(mantissaBinaryLen-1);
     den = 1;
     for(t = 0; t<secondLen; t++){
-        den += 10;
+        den *= 10;
     }
     tempSecond = second;
 

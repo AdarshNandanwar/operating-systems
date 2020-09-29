@@ -19,9 +19,6 @@ SYSCALL_DEFINE2(parse_float_syscall, char __user *, num, int, len){
 
 
 
-
-
-
     while(lengthLeft > 0){
         if(lengthLeft < chunkSize){
             chunkSize = lengthLeft;
@@ -81,7 +78,7 @@ SYSCALL_DEFINE2(parse_float_syscall, char __user *, num, int, len){
     capacity = 32-1-8-(mantissaBinaryLen-1);
     den = 1;
     for(t = 0; t<secondLen; t++){
-        den += 10;
+        den *= 10;
     }
     tempSecond = second;
 
