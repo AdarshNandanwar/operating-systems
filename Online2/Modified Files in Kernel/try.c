@@ -15,17 +15,16 @@ long power(long n, long x){
     return power(n, x/2)*power(n, x-x/2);
 }
 
-long ieee754(char * str, int len){
-    long res = 0;
+long ieee754(char * num, int len){
+    long res = 0, i = 0, j, sign = 0, first = 0, firstBinaryLen = 0, second = 0, secondLen = 0, exponent = 0, mantissa = 0, mantissaBinaryLen = 0, capacity = 32-1-8-(mantissaBinaryLen-1), den = power(10, secondLen), zeroCountTillFirstOne = 0, firstOne = 0, tempSecond = second;
 
     if(len == 0) return res;
 
-    long i = 0, j, sign = 0;
-    if(str[i] == '-') {
+    if(num[i] == '-') {
         // setting sign bit
         sign = (1<<31);
         i++;
-    } else if(str[i] == '+'){
+    } else if(num[i] == '+'){
         i++;
     }
 
@@ -33,12 +32,10 @@ long ieee754(char * str, int len){
 
     // seperating first and second half
 
-    long first = 0, firstBinaryLen = 0, second = 0, secondLen = 0, exponent = 0, mantissa = 0, mantissaBinaryLen = 0;
-
     // extracting first part
     for(; i<len; i++){
-        if(str[i] == '.') break;
-        first = 10*first+(str[i] - '0');
+        if(num[i] == '.') break;
+        first = 10*first+(num[i] - '0');
     }
         
     // printf("First: %ld\n", first);
@@ -48,7 +45,7 @@ long ieee754(char * str, int len){
     i++;
     // extracting second part
     for(; i<len; i++){
-        second = 10*second+(str[i] - '0');
+        second = 10*second+(num[i] - '0');
         secondLen++;
     }
 
@@ -79,10 +76,8 @@ long ieee754(char * str, int len){
 
     // printf("Mantissa: %ld\n", firstBinaryLen);
 
-    long capacity = 32-1-8-(mantissaBinaryLen-1);
 
-    printf("Capacity: %ld\n", capacity);
-    long den = power(10, secondLen), zeroCountTillFirstOne = 0, firstOne = 0, tempSecond = second;
+    // printf("Capacity: %ld\n", capacity);
     // printf("Den: %ld\n", den);
     for(j = capacity-1; j>=0; j--){
         tempSecond *= 2;
@@ -125,9 +120,9 @@ long ieee754(char * str, int len){
 }
 
 int main(){
-    char * str;
-    scanf("%s", str);
-    long res = ieee754(str, strlen(str));
+    char * num;
+    scanf("%s", num);
+    long res = ieee754(num, strlen(num));
     printf("Response: ");
     printBinary(res);
     return 0;
