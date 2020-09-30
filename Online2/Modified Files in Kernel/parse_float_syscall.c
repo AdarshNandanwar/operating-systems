@@ -13,10 +13,9 @@
 
 SYSCALL_DEFINE2(parse_float_syscall, char __user *, num, int, len){
     long res = 0, i = 0, j = 0, t, sign = 0, first = 0, firstBinaryLen = 0, second = 0, secondLen = 0, exponent = 0, mantissa = 0, mantissaBinaryLen = 0, capacity = 32, den = 1, zeroCountTillFirstOne = 0, firstOne = 0, tempSecond = 0;
-    char numBuffer[256];
+    char numBuffer[64];
     unsigned long lengthLeft = len;
     unsigned long chunkSize = sizeof(numBuffer);
-
 
 
     while(lengthLeft > 0){
@@ -29,15 +28,11 @@ SYSCALL_DEFINE2(parse_float_syscall, char __user *, num, int, len){
         lengthLeft = lengthLeft - chunkSize;
     }
 
-
     if(len == 0) return res;
-
 
     if(numBuffer[i] == '-') {
         // setting sign bit
         sign = (1<<31);
-        i++;
-    } else if(numBuffer[i] == '+'){
         i++;
     }
 
@@ -48,6 +43,10 @@ SYSCALL_DEFINE2(parse_float_syscall, char __user *, num, int, len){
     for(; i<len; i++){
         if(numBuffer[i] == '.') break;
         first = 10*first+(numBuffer[i] - '0');
+        if(first > 100000){
+            if(sign == 0) return 1203982464;
+            else return 3351466112;
+        } 
     }
 
     i++;
@@ -55,10 +54,10 @@ SYSCALL_DEFINE2(parse_float_syscall, char __user *, num, int, len){
     for(; i<len; i++){
         second = 10*second+(numBuffer[i] - '0');
         secondLen++;
+        if(second == 0 && secondLen > 1) return 0;
     }
 
-
-    if(first == 0 && second == 0) return sign;
+    if(first == 0 && second == 0) return 0;
 
 
     // calculating exponent
