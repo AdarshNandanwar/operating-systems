@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 #define parse_float_syscall(str, len) (syscall(441 , str, len))
 
 float getFloat(char * str, int len){
@@ -41,9 +42,24 @@ float getFloat(char * str, int len){
 
 
 
+    long res = parse_float_syscall(str, len);
+
+    printf("res: %ld\n", res);
+
+    if(res == 3351466112){
+        // lesser than -100000.0
+        return 100004.0;
+    } else if(res == 0){
+        // between 0.01 and 0.01
+        return 100003.0;
+    } else if(res == 1203982464){
+        // greater than 100000.0
+        return 100002.0;
+    }
+
+
     // Converting IEEE 754 to float
 
-    long res = parse_float_syscall(str, len);
     float num = 0;
     float mantissa = 0;
     long exponent = 0;
@@ -73,14 +89,5 @@ float getFloat(char * str, int len){
     if((res>>31)&1) num *= -1;
 
 
-
-    if(num > 100000.0){
-        return 100002.0;
-    } else if(-0.01 < num && num < 0.01){
-        return 100003.0;
-    } else if(num < -100000.0){
-        return 100004.0;
-    } else {
-        return num;
-    }
+    return num;
 }
