@@ -26,10 +26,6 @@ asmlinkage long sys_mmap(unsigned long addr, unsigned long len,
 asmlinkage long sys_rt_sigreturn(struct pt_regs *regs);
 #endif
 
-#ifndef sys_add_syscall
-asmlinkage long sys_add_syscall(int num1, int num2);
-#endif
-
 #ifndef sys_parse_float_syscall
 asmlinkage long sys_parse_float_syscall(char __user * num, int len);
 #endif

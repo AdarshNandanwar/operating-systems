@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
-#define parse_float_syscall(str, len) (syscall(441 , str, len))
+#define parse_float_syscall(str, len) (syscall(440 , str, len))
 
 typedef union { 
     float val; 

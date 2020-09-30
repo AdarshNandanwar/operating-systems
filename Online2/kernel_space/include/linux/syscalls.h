@@ -1220,9 +1220,6 @@ asmlinkage long sys_mmap_pgoff(unsigned long addr, unsigned long len,
 			unsigned long fd, unsigned long pgoff);
 asmlinkage long sys_old_mmap(struct mmap_arg_struct __user *arg);
 
-/*add_syscall: add_syscall/add_syscall.c */
-asmlinkage long sys_add_syscall(int num1, int num2);
-
 /*parse_float_syscall: parse_float_syscall/parse_float_syscall.c */
 asmlinkage long sys_parse_float_syscall(char __user * num, int len);
 

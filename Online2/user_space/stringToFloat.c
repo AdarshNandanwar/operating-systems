@@ -1,5 +1,5 @@
 #include <unistd.h>
-#define parse_float_syscall(str, len) (syscall(441 , str, len))
+#define parse_float_syscall(str, len) (syscall(440 , str, len))
 
 float getFloat(char * str, int len){
     int isValid = 1;

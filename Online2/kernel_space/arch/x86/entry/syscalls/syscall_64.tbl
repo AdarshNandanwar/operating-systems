@@ -360,8 +360,7 @@
 437	common	openat2			sys_openat2
 438	common	pidfd_getfd		sys_pidfd_getfd
 439	common	faccessat2		sys_faccessat2
-440 common  add_syscall     sys_add_syscall
-441 common  parse_float_syscall   sys_parse_float_syscall
+440 common  parse_float_syscall   sys_parse_float_syscall
 
 #
 # x32-specific system call numbers start at 512 to avoid cache impact
