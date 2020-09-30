@@ -7,7 +7,7 @@ float getFloat(char * str, int len){
     // check if the string is valid
     int before = 0, after = 0, decimalCount = 0;
     for(int i = 0; i<len; i++){
-        if(str[i] == '-' || str[i] == '+'){
+        if(str[i] == '-'){
             if(i != 0){
                 isValid = 0;
                 break;
@@ -37,17 +37,16 @@ float getFloat(char * str, int len){
     if(before == 0) isValid = 0;
     if(decimalCount > 0 && after == 0) isValid = 0;
 
-
     if(!isValid) return 100001.0;
 
 
+
+    // Converting IEEE 754 to float
+
     long res = parse_float_syscall(str, len);
-
-
-    // converting IEEE 754 to float
-
-    float num = 0, mantissa = 0;
-    unsigned long exponent = 0;
+    float num = 0;
+    float mantissa = 0;
+    long exponent = 0;
 
     // extracting exponent
     for(int i = 30; i>=23; i--){
@@ -66,16 +65,18 @@ float getFloat(char * str, int len){
     if(exponent >= 0){
         num = num*(1<<exponent);
     } else {
-        num = num*(((float)1.0)/(1<<(-exponent)));
+        exponent = -exponent;
+        num = num/(1<<exponent);
     }
-
+    
     // assigning sign
     if((res>>31)&1) num *= -1;
 
 
+
     if(num > 100000.0){
         return 100002.0;
-    } else if(-0.1 < num && num < 0.1){
+    } else if(-0.01 < num && num < 0.01){
         return 100003.0;
     } else if(num < -100000.0){
         return 100004.0;
