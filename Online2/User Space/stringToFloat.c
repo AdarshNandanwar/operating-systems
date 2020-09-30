@@ -1,12 +1,11 @@
 #include <unistd.h>
-#include <stdio.h>
 #define parse_float_syscall(str, len) (syscall(441 , str, len))
 
 float getFloat(char * str, int len){
     int isValid = 1;
     
     // check if the string is valid
-    int before = 0, after = 0, decimalCount = 0;
+    long before = 0, after = 0, decimalCount = 0;
     for(int i = 0; i<len; i++){
         if(str[i] == '-'){
             if(i != 0){
@@ -34,17 +33,15 @@ float getFloat(char * str, int len){
             break;
         }
     }
-
-    if(before == 0) isValid = 0;
-    if(decimalCount > 0 && after == 0) isValid = 0;
+    
+    if(before == 0 && after == 0) isValid = 0;
 
     if(!isValid) return 100001.0;
 
 
-
+    // system call
     long res = parse_float_syscall(str, len);
 
-    printf("res: %ld\n", res);
 
     if(res == 3351466112){
         // lesser than -100000.0
@@ -58,7 +55,7 @@ float getFloat(char * str, int len){
     }
 
 
-    // Converting IEEE 754 to float
+    // Converting IEEE 754 format to float
 
     float num = 0;
     float mantissa = 0;

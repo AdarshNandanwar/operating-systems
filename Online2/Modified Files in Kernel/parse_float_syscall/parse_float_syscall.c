@@ -54,11 +54,14 @@ SYSCALL_DEFINE2(parse_float_syscall, char __user *, num, int, len){
     for(; i<len; i++){
         second = 10*second+(numBuffer[i] - '0');
         secondLen++;
-        if(second == 0 && secondLen > 1) return 0;
+        if(first == 0 && second == 0 && secondLen > 1) return 0;
     }
 
     if(first == 0 && second == 0) return 0;
-
+    if(first == 100000 && second != 0){
+        if(sign == 0) return 1203982464;
+        else return 3351466112;
+    } 
 
     // calculating exponent
     j = first;
