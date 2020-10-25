@@ -6,7 +6,7 @@
 #include <sys/wait.h>
 #include <sys/shm.h>
 
-#define N 16
+#define N 1000
 #define READ_END 0
 #define WRITE_END 1
 
