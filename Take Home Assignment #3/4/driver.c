@@ -195,6 +195,8 @@ void process_queue_maintainer(int pid_driver){
     kill(pid_ticket_counter, SIGTERM);
     kill(pid_driver, SIGTERM);
     exit(0);
+    // Another method is to wait in main and send a signal here to kill the child processes.
+    // In this way, not sleep is interrupted and process ends in exactly 100 secs and main dosen't need to know the pid of every grandchildren.
 }
 
 void process_driver(){
@@ -221,6 +223,14 @@ int main(int argc, char *argv[])
 	gettimeofday(&start,0);
     int pid_queue_maintainer = -1, pid_driver = -1;
     srand(time(0));
+
+    // PROCESS TREE:
+    //                     main
+    //                     /
+    //         queue_maintainer
+    //             /       \
+    // ticket_counter      driver
+
     
     pid_queue_maintainer = fork();
     if(pid_queue_maintainer == 0){
