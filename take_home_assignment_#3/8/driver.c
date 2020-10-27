@@ -21,6 +21,30 @@ float timedifference_msec(struct timeval t0, struct timeval t1)
     return (t1.tv_sec - t0.tv_sec) * 1000.0f + (t1.tv_usec - t0.tv_usec) / 1000.0f;
 }
 
+char * command_log_path, * output_log_path;
+
+
+void get_cwd(char * cwd){
+    int pipe_cwd[2];
+    if(pipe(pipe_cwd) == -1){
+        printf("Couldn't create pipe for pwd.\n");
+        return;
+    }
+    if(fork() == 0){
+        dup2(pipe_cwd[WRITE_END], STDOUT_FILENO);
+        close(pipe_cwd[READ_END]);
+        close(pipe_cwd[WRITE_END]);
+        execlp("pwd", "pwd", (char *)NULL);
+    } else {
+        waitpid(-1, NULL, 0);
+        close(pipe_cwd[WRITE_END]);
+        read(pipe_cwd[READ_END], cwd, N);
+        close(pipe_cwd[READ_END]);
+    }
+
+    cwd[strlen(cwd)-1] = '\0';
+}
+
 void exec_external_command(char cmd[], int pipe_prev[2], int logging){
 
     char * cur_cmd = (char *) malloc(N*sizeof(char));
@@ -104,25 +128,8 @@ void exec_external_command(char cmd[], int pipe_prev[2], int logging){
         printf("searching in cwd: ");
 
         // getting cwd
-        int pipe_cwd[2];
         char * cwd = (char *) malloc(N*sizeof(char));
-        if(pipe(pipe_cwd) == -1){
-            printf("Couldn't create pipe.\n");
-            return;
-        }
-        if(fork() == 0){
-            dup2(pipe_cwd[WRITE_END], STDOUT_FILENO);
-            close(pipe_cwd[READ_END]);
-            close(pipe_cwd[WRITE_END]);
-            execlp("pwd", "pwd", (char *)NULL);
-        } else {
-            waitpid(-1, NULL, 0);
-            close(pipe_cwd[WRITE_END]);
-            read(pipe_cwd[READ_END], cwd, N);
-            close(pipe_cwd[READ_END]);
-        }
-
-        cwd[strlen(cwd)-1] = '\0';
+        get_cwd(cwd);
         printf("%s\n", cwd);
 
         // checking if command is available in cwd
@@ -192,7 +199,7 @@ void exec_external_command(char cmd[], int pipe_prev[2], int logging){
                 printf("%s", exec_output);
                 fflush(stdout);
                 if(logging){
-                    FILE * fd_out_log = fopen("output.log", "a");
+                    FILE * fd_out_log = fopen(output_log_path, "a");
                     if(fd_out_log == NULL){
                         printf("error opening \"output.log\" file\n");
                         return;
@@ -213,8 +220,22 @@ int main(int argc, char * argv[]){
     srand(time(NULL));
     gettimeofday(&start,0);
 
-    fclose(fopen("output.log", "w"));
-    fclose(fopen("command.log", "w"));
+
+
+    // getting cwd
+    char * cwd_path = (char *) malloc(N*sizeof(char));
+    command_log_path = (char *) malloc(N*sizeof(char));
+    output_log_path = (char *) malloc(N*sizeof(char));
+    get_cwd(cwd_path);
+    strcpy(command_log_path, cwd_path);
+    strcat(command_log_path, "/command.log");
+    strcpy(output_log_path, cwd_path);
+    strcat(output_log_path, "/output.log");
+
+
+
+    fclose(fopen(output_log_path, "w"));
+    fclose(fopen(command_log_path, "w"));
 
     // simulate
     
@@ -224,7 +245,9 @@ int main(int argc, char * argv[]){
     while(1){
         printf("> ");
         scanf("%[^\n]%*c", line);
-        if(entered == 0){
+        if(strcmp(line, "exit") == 0){
+            return 0;
+        } else if(entered == 0){
             if(strcmp(line, "entry") == 0){
                 entered = 1;
                 printf("Command line interpreter started\n");
@@ -254,7 +277,7 @@ int main(int argc, char * argv[]){
                     printf("Logging already stopped\n");
                 }
             } else if(strcmp(line, "viewcmdlog") == 0){
-                FILE * fd_cmd_log = fopen("command.log", "r");
+                FILE * fd_cmd_log = fopen(command_log_path, "r");
                 if(fd_cmd_log == NULL){
                     printf("error opening \"command.log\" file\n");
                     return 0;
@@ -264,20 +287,9 @@ int main(int argc, char * argv[]){
                     printf("%s", log_line);
                 }
                 fclose(fd_cmd_log);
-            } else if(strcmp(line, "viewoutlog") == 0){
-                FILE * fd_out_log = fopen("output.log", "r");
-                if(fd_out_log == NULL){
-                    printf("error opening \"output.log\" file\n");
-                    return 0;
-                }
-                char * out_line = (char *) malloc(1024*sizeof(char));
-                while(fgets(out_line, sizeof(out_line), fd_out_log)){
-                    printf("%s", out_line);
-                }
-                fclose(fd_out_log);
             } else {
                 if(logging){
-                    FILE * fd_cmd_log = fopen("command.log", "a");
+                    FILE * fd_cmd_log = fopen(command_log_path, "a");
                     if(fd_cmd_log == NULL){
                         printf("error opening \"command.log\" file\n");
                         return 0;
@@ -303,33 +315,22 @@ int main(int argc, char * argv[]){
                         path[index] = '\0';
                         if(chdir(path) < 0) {
                             printf("Error changing directory to %s\n", path);
-                            return 0;
-                        }
-                        printf("Directory changed. The present working directory is ");
-                        int pipe_pwd[2];
-                        if(pipe(pipe_pwd) == -1){
-                            printf("Couldn't create pipe_pwd\n");
-                            return 0;
+                            continue;
                         }
 
-                        int pipe_1[2];
-                        if(pipe(pipe_1) == -1){
-                            printf("Couldn't create pipe.\n");
-                            return -1;
-                        }
-                        if(fork() == 0){
-                            dup2(pipe_1[WRITE_END], STDOUT_FILENO);
-                            close(pipe_1[READ_END]);
-                            close(pipe_1[WRITE_END]);
-                            execl("/bin/pwd", "pwd", (char *)NULL);
-                        }
-                        else {
-                            waitpid(-1, NULL, 0);
-                            close(pipe_1[WRITE_END]);
-                            char * exec_output = (char *) malloc(N*sizeof(char));
-                            read(pipe_1[READ_END], exec_output, N);
-                            close(pipe_1[READ_END]);
-                            printf("%s", exec_output);
+                        // getting cwd
+                        char * cwd = (char *) malloc(N*sizeof(char));
+                        get_cwd(cwd);
+
+                        printf("Directory changed. The present working directory is %s\n", cwd);
+                        if(logging){
+                            FILE * fd_out_log = fopen(output_log_path, "a");
+                            if(fd_out_log == NULL){
+                                printf("error opening \"output.log\" file\n");
+                                return 0;
+                            }
+                            fprintf(fd_out_log, "Directory changed. The present working directory is %s\n", cwd);
+                            fclose(fd_out_log);
                         }
                         continue;
                     }
