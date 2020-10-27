@@ -1,0 +1,8 @@
+entry
+log
+ls -l | grep txt | more
+unlog
+viewcmdlog
+viewoutlog
+changedir /mnt/7A12F8C112F88403/BPGC/Moodle/Sem5/
+exit
