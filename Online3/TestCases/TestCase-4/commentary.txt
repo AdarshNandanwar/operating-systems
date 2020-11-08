@@ -1,0 +1,86 @@
+Starting innings
+R.JADEJA bowled and C.GAYLE scored 1
+R.JADEJA bowled and KL.RAHUL scored 0
+R.JADEJA bowled and KL.RAHUL scored 2
+R.JADEJA got a wicket: KL.RAHUL
+R.JADEJA bowled and D.HOODA scored 5
+R.JADEJA bowled and C.GAYLE scored 1
+
+K.JADHAV bowled and C.GAYLE scored 1
+K.JADHAV bowled and D.HOODA scored 3
+K.JADHAV bowled and C.GAYLE scored 5
+K.JADHAV bowled and D.HOODA scored 5
+K.JADHAV bowled and C.GAYLE scored 3
+K.JADHAV bowled and D.HOODA scored 2
+
+I.TAHIR bowled and C.GAYLE scored 2
+I.TAHIR got a wicket: C.GAYLE
+I.TAHIR bowled and N.POORAN scored 0
+I.TAHIR bowled and N.POORAN scored 4
+I.TAHIR got a wicket: N.POORAN
+I.TAHIR bowled and M.AGARWAL scored 2
+
+S.THAKUR bowled and D.HOODA scored 1
+S.THAKUR bowled and M.AGARWAL scored 2
+S.THAKUR bowled and M.AGARWAL scored 1
+S.THAKUR bowled and D.HOODA scored 6
+S.THAKUR got a wicket: D.HOODA
+S.THAKUR bowled and G.MAXWELL scored 2
+
+M.SANTNER bowled and M.AGARWAL scored 1
+M.SANTNER bowled and G.MAXWELL scored 2
+M.SANTNER bowled and G.MAXWELL scored 3
+M.SANTNER bowled and M.AGARWAL scored 3
+M.SANTNER bowled and G.MAXWELL scored 1
+M.SANTNER bowled and M.AGARWAL scored 1
+
+First Inning Ended
+
+Starting innings
+M.ASHWIN bowled and M.VIJAY scored 1
+M.ASHWIN bowled and A.RAYUDU scored 0
+M.ASHWIN bowled and A.RAYUDU scored 2
+M.ASHWIN got a wicket: A.RAYUDU
+M.ASHWIN bowled and FD.PLESSIS scored 5
+M.ASHWIN bowled and M.VIJAY scored 1
+
+G.MAXWELL bowled and M.VIJAY scored 1
+G.MAXWELL bowled and FD.PLESSIS scored 3
+G.MAXWELL bowled and M.VIJAY scored 5
+G.MAXWELL bowled and FD.PLESSIS scored 5
+G.MAXWELL bowled and M.VIJAY scored 3
+G.MAXWELL bowled and FD.PLESSIS scored 2
+
+M.SHAMI bowled and M.VIJAY scored 2
+M.SHAMI got a wicket: M.VIJAY
+M.SHAMI bowled and S.WATSON scored 0
+M.SHAMI bowled and S.WATSON scored 4
+M.SHAMI got a wicket: S.WATSON
+M.SHAMI bowled and MS.DHONI scored 2
+
+M.SINGH bowled and FD.PLESSIS scored 1
+M.SINGH bowled and MS.DHONI scored 2
+M.SINGH bowled and MS.DHONI scored 1
+M.SINGH bowled and FD.PLESSIS scored 6
+M.SINGH got a wicket: FD.PLESSIS
+M.SINGH bowled and K.JADHAV scored 2
+
+C.JORDAN bowled and MS.DHONI scored 1
+C.JORDAN bowled and K.JADHAV scored 2
+C.JORDAN bowled and K.JADHAV scored 3
+C.JORDAN bowled and MS.DHONI scored 3
+C.JORDAN bowled and K.JADHAV scored 1
+C.JORDAN bowled and MS.DHONI scored 1
+
+Match ended
+Inning 1: 59-4(30)
+Inning 2: 59-4(30)
+Tie >:(
+
+Team#1: KXIP
+MVP BATSMAN: D.HOODA     
+MVP BOWLER: M.SINGH     
+
+Team#2: CSK
+MVP BATSMAN: FD.PLESSIS  
+MVP BOWLER: S.THAKUR    

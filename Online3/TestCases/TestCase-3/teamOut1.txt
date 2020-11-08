@@ -1,0 +1,12 @@
+NAME		RUNS SCORED	BALLS PLAYED	STATUS		RUNS GIVEN	BALLS BOWLED	WICKETS TAKEN
+C.GAYLE     	11      	5       	OUT       	0       	0       	0       
+KL.RAHUL    	28      	9       	OUT       	0       	0       	0       
+D.HOODA     	13      	5       	OUT       	0       	0       	0       
+N.POORAN    	11      	3       	OUT       	0       	0       	0       
+M.AGARWAL   	25      	11      	OUT       	0       	0       	0       
+G.MAXWELL   	19      	7       	OUT       	35      	12      	2       
+M.ASHWIN    	0       	1       	OUT       	46      	18      	2       
+M.SHAMI     	0       	2       	OUT       	42      	12      	0       
+C.JORDAN    	18      	8       	NOT OUT   	0       	0       	0       
+MU.RAHMAN   	18      	8       	OUT       	38      	12      	0       
+M.SINGH     	1       	2       	OUT       	45      	18      	2       

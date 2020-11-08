@@ -1,0 +1,12 @@
+NAME		RUNS SCORED	BALLS PLAYED	STATUS		RUNS GIVEN	BALLS BOWLED	WICKETS TAKEN
+M.VIJAY     	13      	7       	OUT       	0       	0       	0       
+A.RAYUDU    	2       	3       	OUT       	0       	0       	0       
+FD.PLESSIS  	22      	7       	OUT       	0       	0       	0       
+S.WATSON    	4       	3       	OUT       	0       	0       	0       
+MS.DHONI    	10      	6       	NOT OUT   	0       	0       	0       
+K.JADHAV    	8       	4       	NOT OUT   	19      	6       	0       
+R.JADEJA    	0       	0       	NOT PLAYED	9       	6       	1       
+I.TAHIR     	0       	0       	NOT PLAYED	8       	6       	2       
+M.SANTNER   	0       	0       	NOT PLAYED	11      	6       	0       
+L.NGIDI     	0       	0       	NOT PLAYED	0       	0       	0       
+S.THAKUR    	0       	0       	NOT PLAYED	12      	6       	1       

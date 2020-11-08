@@ -1,0 +1,16 @@
+Header file 0.5
+makefile 1
+driver [including command line arg, its validation etc.] 2.5M
+Implementation 5M
+Readability 1M
+Modularity 1M
+Final Output 1M
+
+Those who submitted late: [Penalty] 
+upto 2 minutes late [12:01] - 0 Marks
+3 to 4 minutes late [12:03] - 1 Mark
+5 to 7 minutes late [12:06] - 1.5 Marks
+8 to 10 minutes late [12:09] - 2 Marks
+11 to 15 minutes late [12:14] - 4 Marks
+Later than 12:14 - Not considered for evaluation.
+[If you feel your last modified time is before 12:00 [for all the files], you can apply for recheck.

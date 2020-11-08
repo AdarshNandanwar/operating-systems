@@ -1,0 +1,172 @@
+Starting innings
+M.SHAMI bowled and M.VIJAY scored 2
+M.SHAMI bowled and M.VIJAY scored 2
+M.SHAMI bowled and M.VIJAY scored 5
+M.SHAMI bowled and A.RAYUDU scored 4
+M.SHAMI bowled and A.RAYUDU scored 1
+M.SHAMI bowled and M.VIJAY scored 5
+
+M.ASHWIN bowled and M.VIJAY scored 3
+M.ASHWIN bowled and A.RAYUDU scored 5
+M.ASHWIN bowled and M.VIJAY scored 4
+M.ASHWIN bowled and M.VIJAY scored 1
+M.ASHWIN got a wicket: A.RAYUDU
+M.ASHWIN bowled and FD.PLESSIS scored 2
+
+MU.RAHMAN bowled and M.VIJAY scored 6
+MU.RAHMAN bowled and M.VIJAY scored 1
+MU.RAHMAN bowled and FD.PLESSIS scored 3
+MU.RAHMAN bowled and M.VIJAY scored 5
+MU.RAHMAN bowled and FD.PLESSIS scored 5
+MU.RAHMAN bowled and M.VIJAY scored 3
+
+M.SINGH bowled and M.VIJAY scored 5
+M.SINGH bowled and FD.PLESSIS scored 6
+M.SINGH bowled and FD.PLESSIS scored 0
+M.SINGH bowled and FD.PLESSIS scored 4
+M.SINGH got a wicket: FD.PLESSIS
+M.SINGH bowled and S.WATSON scored 4
+
+M.SHAMI bowled and M.VIJAY scored 5
+M.SHAMI bowled and S.WATSON scored 3
+M.SHAMI bowled and M.VIJAY scored 3
+M.SHAMI bowled and S.WATSON scored 5
+M.SHAMI bowled and M.VIJAY scored 5
+M.SHAMI bowled and S.WATSON scored 2
+
+G.MAXWELL bowled and M.VIJAY scored 4
+G.MAXWELL got a wicket: M.VIJAY
+G.MAXWELL bowled and MS.DHONI scored 6
+G.MAXWELL bowled and MS.DHONI scored 0
+G.MAXWELL bowled and MS.DHONI scored 6
+G.MAXWELL got a wicket: MS.DHONI
+
+M.ASHWIN bowled and S.WATSON scored 2
+M.ASHWIN bowled and S.WATSON scored 5
+M.ASHWIN bowled and K.JADHAV scored 2
+M.ASHWIN bowled and K.JADHAV scored 3
+M.ASHWIN bowled and S.WATSON scored 4
+M.ASHWIN bowled and S.WATSON scored 2
+
+M.SINGH bowled and K.JADHAV scored 0
+M.SINGH bowled and K.JADHAV scored 4
+M.SINGH bowled and K.JADHAV scored 6
+M.SINGH bowled and K.JADHAV scored 0
+M.SINGH bowled and K.JADHAV scored 6
+M.SINGH bowled and K.JADHAV scored 3
+
+G.MAXWELL bowled and K.JADHAV scored 0
+G.MAXWELL bowled and K.JADHAV scored 4
+G.MAXWELL bowled and K.JADHAV scored 6
+G.MAXWELL bowled and K.JADHAV scored 0
+G.MAXWELL bowled and K.JADHAV scored 6
+G.MAXWELL bowled and K.JADHAV scored 3
+
+M.ASHWIN bowled and K.JADHAV scored 0
+M.ASHWIN bowled and K.JADHAV scored 3
+M.ASHWIN bowled and S.WATSON scored 1
+M.ASHWIN bowled and K.JADHAV scored 4
+M.ASHWIN got a wicket: K.JADHAV
+M.ASHWIN bowled and R.JADEJA scored 5
+
+MU.RAHMAN bowled and R.JADEJA scored 1
+MU.RAHMAN bowled and S.WATSON scored 0
+MU.RAHMAN bowled and S.WATSON scored 6
+MU.RAHMAN bowled and S.WATSON scored 3
+MU.RAHMAN bowled and R.JADEJA scored 3
+MU.RAHMAN bowled and S.WATSON scored 2
+
+M.SINGH bowled and R.JADEJA scored 0
+M.SINGH bowled and R.JADEJA scored 1
+M.SINGH bowled and S.WATSON scored 4
+M.SINGH got a wicket: S.WATSON
+M.SINGH bowled and I.TAHIR scored 0
+M.SINGH bowled and I.TAHIR scored 2
+
+First Inning Ended
+
+Starting innings
+R.JADEJA bowled and C.GAYLE scored 1
+R.JADEJA bowled and KL.RAHUL scored 2
+R.JADEJA bowled and KL.RAHUL scored 6
+R.JADEJA bowled and KL.RAHUL scored 1
+R.JADEJA bowled and C.GAYLE scored 3
+R.JADEJA bowled and KL.RAHUL scored 5
+
+K.JADHAV bowled and KL.RAHUL scored 5
+K.JADHAV bowled and C.GAYLE scored 5
+K.JADHAV bowled and KL.RAHUL scored 3
+K.JADHAV bowled and C.GAYLE scored 2
+K.JADHAV got a wicket: C.GAYLE
+K.JADHAV bowled and D.HOODA scored 1
+
+R.JADEJA bowled and D.HOODA scored 6
+R.JADEJA bowled and D.HOODA scored 0
+R.JADEJA bowled and D.HOODA scored 6
+R.JADEJA got a wicket: D.HOODA
+R.JADEJA bowled and N.POORAN scored 5
+R.JADEJA bowled and KL.RAHUL scored 0
+
+S.THAKUR bowled and N.POORAN scored 6
+S.THAKUR got a wicket: N.POORAN
+S.THAKUR bowled and M.AGARWAL scored 4
+S.THAKUR bowled and M.AGARWAL scored 1
+S.THAKUR bowled and KL.RAHUL scored 6
+S.THAKUR got a wicket: KL.RAHUL
+
+K.JADHAV bowled and M.AGARWAL scored 6
+K.JADHAV bowled and M.AGARWAL scored 4
+K.JADHAV bowled and M.AGARWAL scored 1
+K.JADHAV bowled and G.MAXWELL scored 4
+K.JADHAV bowled and G.MAXWELL scored 2
+K.JADHAV bowled and G.MAXWELL scored 1
+
+R.JADEJA bowled and G.MAXWELL scored 6
+R.JADEJA bowled and G.MAXWELL scored 0
+R.JADEJA bowled and G.MAXWELL scored 6
+R.JADEJA got a wicket: G.MAXWELL
+R.JADEJA got a wicket: M.ASHWIN
+R.JADEJA bowled and M.SHAMI scored 0
+
+L.NGIDI bowled and M.AGARWAL scored 1
+L.NGIDI got a wicket: M.SHAMI
+L.NGIDI bowled and C.JORDAN scored 3
+L.NGIDI bowled and M.AGARWAL scored 2
+L.NGIDI bowled and M.AGARWAL scored 2
+L.NGIDI bowled and M.AGARWAL scored 3
+
+S.THAKUR bowled and M.AGARWAL scored 1
+S.THAKUR bowled and C.JORDAN scored 1
+S.THAKUR got a wicket: M.AGARWAL
+S.THAKUR bowled and MU.RAHMAN scored 2
+S.THAKUR bowled and MU.RAHMAN scored 0
+S.THAKUR bowled and MU.RAHMAN scored 3
+
+K.JADHAV bowled and MU.RAHMAN scored 3
+K.JADHAV bowled and C.JORDAN scored 0
+K.JADHAV bowled and C.JORDAN scored 2
+K.JADHAV bowled and C.JORDAN scored 1
+K.JADHAV bowled and MU.RAHMAN scored 3
+K.JADHAV bowled and C.JORDAN scored 2
+
+I.TAHIR bowled and MU.RAHMAN scored 1
+I.TAHIR bowled and C.JORDAN scored 4
+I.TAHIR bowled and C.JORDAN scored 5
+I.TAHIR bowled and MU.RAHMAN scored 6
+I.TAHIR got a wicket: MU.RAHMAN
+I.TAHIR bowled and M.SINGH scored 1
+
+M.SANTNER got a wicket: M.SINGH
+
+Match ended
+Inning 1: 206-6(72)
+Inning 2: 144-10(61)
+Team CSK won!!!
+
+Team#1: KXIP
+MVP BATSMAN: KL.RAHUL    
+MVP BOWLER: M.SINGH     
+
+Team#2: CSK
+MVP BATSMAN: M.VIJAY     
+MVP BOWLER: R.JADEJA    

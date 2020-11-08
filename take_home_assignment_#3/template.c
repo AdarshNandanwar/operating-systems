@@ -22,6 +22,28 @@ float timedifference_msec(struct timeval t0, struct timeval t1)
 }
 
 
+void get_cwd(char * cwd){
+    int pipe_cwd[2];
+    if(pipe(pipe_cwd) == -1){
+        printf("Couldn't create pipe for pwd.\n");
+        return;
+    }
+    if(fork() == 0){
+        dup2(pipe_cwd[WRITE_END], STDOUT_FILENO);
+        close(pipe_cwd[READ_END]);
+        close(pipe_cwd[WRITE_END]);
+        execlp("pwd", "pwd", (char *)NULL);
+    } else {
+        waitpid(-1, NULL, 0);
+        close(pipe_cwd[WRITE_END]);
+        read(pipe_cwd[READ_END], cwd, N);
+        close(pipe_cwd[READ_END]);
+    }
+
+    cwd[strlen(cwd)-1] = '\0';
+}
+
+
 int main(int argc, char * argv[]){
     
     srand(time(NULL));
@@ -90,6 +112,8 @@ int main(int argc, char * argv[]){
 
 
 /*
+    // NESTED PIPE
+
     int pipe_1[2];
     if(pipe(pipe_1) == -1){
         printf("Couldn't create pipe\n");
@@ -132,6 +156,15 @@ int main(int argc, char * argv[]){
         }
         close(pipe_1[READ_END]);
     }
+*/
+
+
+/*
+    // GET CURRENT WORKING DIRECTORY (CWD)
+
+    char * cwd = (char *) malloc(N*sizeof(char));
+    get_cwd(cwd);
+
 */
 
     return 0;
